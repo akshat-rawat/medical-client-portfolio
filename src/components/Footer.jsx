@@ -10,7 +10,6 @@ export default function Footer() {
       className="text-center text-white"
       style={{
         backgroundColor: "#f1f1f1",
-        position: "fixed",
         left: 0,
         bottom: 0,
         right: 0,
