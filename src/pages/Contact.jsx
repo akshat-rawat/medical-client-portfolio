@@ -1,8 +1,9 @@
+import Map from "../components/Map";
 
 const Contact = () => {
-    return <>
-      Contact
-    </>;
-  }
-  
-  export default Contact;
+  return <>
+    <Map />
+  </>;
+}
+
+export default Contact;
