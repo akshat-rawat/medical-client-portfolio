@@ -5,8 +5,8 @@ import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import Home from "./pages/Home";
 import Testimonials from "./pages/Testimonials";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Navbar from "./components/Layouts/Navbar";
+import Footer from "./components/Layouts/Footer";
 
 const Router = () => {
   return (

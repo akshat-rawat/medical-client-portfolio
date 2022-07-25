@@ -8,7 +8,7 @@ const pinStyle = {
 
 const CityPin = ({ size }) => {
   return <>
-    <a href={CONSTANTS.mapLINK} target="_blank">
+    <a href={CONSTANTS.mapLINK} target="_blank" rel="noreferrer">
       <svg
         height={size}
         viewBox="0 0 24 24"
