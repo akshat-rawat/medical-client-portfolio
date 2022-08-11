@@ -1,22 +1,22 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const BlogsSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true
+    required: true,
   },
   content: {
     type: String,
-    required: true
+    required: true,
   },
   dateCreated: {
     type: String,
-    required: true
+    required: true,
   },
   picURL: {
     type: String,
-    default: ""
-  }
+    default: "",
+  },
 });
 
 const Blogs = mongoose.model("Blogs", BlogsSchema);
