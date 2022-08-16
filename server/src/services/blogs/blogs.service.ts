@@ -1,37 +1,42 @@
-async function getMultiple(page = 1) {
+const blogsModel = require("../../models/blogs/blogs.model");
+
+export async function getMultiple(page = 1) {
+  const blogs = await blogsModel.find({});
+
   return {
-    message: "Get multiple blogs",
+    blogs,
   };
 }
 
-async function getSingle(id: Number) {
+export async function getSingle(id: Number) {
+  const blog = await blogsModel.findById(id);
+
   return {
-    message: "Get single blog",
+    blog,
   };
 }
 
-async function create(content: String) {
+export async function create(blogBody: Object) {
+  const blog = new blogsModel(blogBody);
+  await blog.save();
+
   return {
-    message: "Create new blog",
+    blog,
   };
 }
 
-async function update(id: Number, content: String) {
+export async function update(id: Number, blogBody: Object) {
+  const blog = await blogsModel.findByIdAndUpdate(id, blogBody);
+
   return {
-    message: "Update blog",
+    blog,
   };
 }
 
-async function remove(id: Number) {
+export async function remove(id: Number) {
+  const blog = await blogsModel.findByIdAndRemove(id);
+
   return {
-    message: "Delete a blog",
+    blog,
   };
 }
-
-module.exports = {
-  getMultiple,
-  getSingle,
-  create,
-  update,
-  remove,
-};

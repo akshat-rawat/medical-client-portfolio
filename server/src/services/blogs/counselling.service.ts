@@ -1,38 +1,45 @@
-async function getMultiple(page = 1) {
-    return {
-      message: "Get multiple blogs",
-    };
-  }
-  
-  async function getSingle(id: Number) {
-    return {
-      message: "Get single blog",
-    };
-  }
-  
-  async function create(content: String) {
-    return {
-      message: "Create new blog",
-    };
-  }
-  
-  async function update(id: Number, content: String) {
-    return {
-      message: "Update blog",
-    };
-  }
-  
-  async function remove(id: Number) {
-    return {
-      message: "Delete a blog",
-    };
-  }
-  
-  module.exports = {
-    getMultiple,
-    getSingle,
-    create,
-    update,
-    remove,
+const counsellingModel = require("../../models/blogs/counselling.model");
+
+export async function getMultiple(page = 1) {
+  const counsellings = await counsellingModel.find({});
+
+  return {
+    counsellings,
   };
-  
+}
+
+export async function getSingle(id: Number) {
+  const counselling = await counsellingModel.findById(id);
+
+  return {
+    counselling,
+  };
+}
+
+export async function create(counsellingBody: Object) {
+  const counselling = new counsellingModel(counsellingBody);
+  await counselling.save();
+
+  return {
+    counselling,
+  };
+}
+
+export async function update(id: Number, counsellingBody: Object) {
+  const counselling = await counsellingModel.findByIdAndUpdate(
+    id,
+    counsellingBody
+  );
+
+  return {
+    counselling,
+  };
+}
+
+export async function remove(id: Number) {
+  const counselling = await counsellingModel.findByIdAndRemove(id);
+
+  return {
+    counselling,
+  };
+}
