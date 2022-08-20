@@ -1,0 +1,13 @@
+.Contact {
+  position: relative;
+}
+
+.para {
+  font-family: "EB Garamond", "serif";
+}
+
+.contactHeading {
+  display: flex;
+  width: 20px;
+  left: 30px;
+}
