@@ -12,15 +12,16 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { getNavLink } from "../../services/utils/helpers";
 
 const drawerWidth = 300;
 const navItems = [
     "Home",
     "About me",
     "Services provided",
-    "Blogs",
+    // "Blogs",
     "Testimonials and Cases",
-    "Appointment",
+    // "Appointment",
     "Gallery",
     "Contact",
 ];
@@ -39,11 +40,13 @@ const Navbar = (props) => {
             <Divider />
             <List>
                 {navItems.map((item) => (
-                    <ListItem key={item} disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center' }}>
-                            <ListItemText primary={item} />
-                        </ListItemButton>
-                    </ListItem>
+                    <a href={getNavLink(item)}>
+                        <ListItem key={item} disablePadding>
+                            <ListItemButton sx={{ textAlign: 'center', color: '#000' }}>
+                                <ListItemText primary={item} />
+                            </ListItemButton>
+                        </ListItem>
+                    </a>
                 ))}
             </List>
         </Box>
@@ -73,7 +76,7 @@ const Navbar = (props) => {
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
-                            <Button key={item} sx={{ color: '#fff' }}>
+                            <Button href={getNavLink(item)} key={item} sx={{ color: '#fff' }}>
                                 {item}
                             </Button>
                         ))}
