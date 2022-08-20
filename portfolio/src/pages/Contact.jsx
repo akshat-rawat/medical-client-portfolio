@@ -22,18 +22,16 @@ const Contact = () => {
                     className="para"
                     style={{ fontSize: "2rem", textAlign: "left" }}
                   >
-                    Address:{" "}
+                    Address:
                   </p>
-                  406, Bohra Colony, <br />
-                  Bohra Layout, Gottigere, <br />
-                  Bengaluru, Karnataka 560083
+                  Benaka plaza, Basement No.70/1, Nobel residency road, Central Excise House Building Co-operative Society, Doddakammanahalli Begur, Uttarahalli Hobli, Bengaluru
                   <br />
                   <br />
                   <p
                     className="para"
                     style={{ fontSize: "2rem", textAlign: "left" }}
                   >
-                    E-Mail:{" "}
+                    E-Mail:
                   </p>
                   drsmilki@gmail.com <br />
                   <br />
@@ -41,9 +39,9 @@ const Contact = () => {
                     className="para"
                     style={{ fontSize: "2rem", textAlign: "left" }}
                   >
-                    Phone:{" "}
+                    Phone:
                   </p>
-                  +91-1234567890
+                  +91-9880493843
                 </div>
               </CardContent>
             </Grid>
